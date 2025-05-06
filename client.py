@@ -4,28 +4,32 @@ import struct
 
 def send_with_length(sock, data):
     try:
+        # convert data into bytes
         serialized = pickle.dumps(data)
+        # add a length of data
         length = struct.pack('>I', len(serialized))
+        # send length of data and data
         sock.sendall(length + serialized)
     except Exception as e:
         print("Send failed:", e)
 
-def recv_with_length(sock):
+def reiceve_with_length(sock):
     try:
-        # Read message length (first 4 bytes)
-        raw_length = recvall(sock, 4)
+        # reading the length of data
+        raw_length = reiceve_all(sock, 4)
         if not raw_length:
             return None
         length = struct.unpack('>I', raw_length)[0]
         # Read the full message data based on length
-        data = recvall(sock, length)
+        data = reiceve_all(sock, length)
+        # convert bytes into data
         return pickle.loads(data)
     except Exception as e:
         print("Receive failed:", e)
         return None
 
-# Helper to receive n bytes or return None if EOF is hit
-def recvall(sock, n):
+# Waiting for all data to come
+def reiceve_all(sock, n):
     data = b''
     while len(data) < n:
         try:
@@ -50,7 +54,7 @@ class Client:
         send_with_length(self.client, data)
 
     def receive(self):
-        return recv_with_length(self.client)
+        return reiceve_with_length(self.client)
 
     def close(self):
         self.client.close()
