@@ -99,9 +99,10 @@ class Board:
 		return blind_legal_moves
 
 	# Returns a list of possible move locations from a given set of coordinates (x,y) on the board.
-	def legal_moves(self, pixel, hop = False):
-
-
+	def legal_moves(self, pixel, to_select = None, hop = False):
+		self.can_hop = False
+		if to_select and pixel not in to_select:
+			return []
 		x = pixel[0]
 		y = pixel[1]
 		blind_legal_moves = self.blind_legal_moves((x,y)) 
@@ -116,13 +117,18 @@ class Board:
 
 						elif self.location(move).occupant.color != self.location((x,y)).occupant.color and self.on_board((move[0] + (move[0] - x), move[1] + (move[1] - y))) and self.location((move[0] + (move[0] - x), move[1] + (move[1] - y))).occupant == None: # is this location filled by an enemy piece?
 							legal_moves.append((move[0] + (move[0] - x), move[1] + (move[1] - y)))
+							self.can_hop = True
+							
 
 		else: # hop == True
 			for move in blind_legal_moves:
 				if self.on_board(move) and self.location(move).occupant != None:
 					if self.location(move).occupant.color != self.location((x,y)).occupant.color and self.on_board((move[0] + (move[0] - x), move[1] + (move[1] - y))) and self.location((move[0] + (move[0] - x), move[1] + (move[1] - y))).occupant == None: # is this location filled by an enemy piece?
 						legal_moves.append((move[0] + (move[0] - x), move[1] + (move[1] - y)))
-
+						self.can_hop = True
+					
+		if self.can_hop:
+			legal_moves = [moves for moves in legal_moves if moves not in blind_legal_moves]
 		return legal_moves
 
 	# Removes a piece from the board at position (x,y). 
@@ -170,3 +176,14 @@ class Board:
 		if self.location((x,y)).occupant != None:
 			if (self.location((x,y)).occupant.color == WHITE and y == 0) or (self.location((x,y)).occupant.color == BLACK and y == 7):
 				self.location((x,y)).occupant.king = True 
+
+	def capture_posibility(self, color):
+		to_select = []
+		for i in range(8):
+			for j in range(8):
+				square = self.location((i, j))
+				if square.occupant and square.occupant.color == color:
+					self.legal_moves((i,j))
+					if self.can_hop:
+						to_select.append((i,j))
+		return to_select	
