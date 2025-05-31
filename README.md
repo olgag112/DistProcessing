@@ -39,4 +39,13 @@ featuring classical 8x8 board, piece movement, king promotion, move highlighting
   └── README.md
 ```
 
+## WHat to do to run the game?
+#### 1st player [server]:
+     1. python checkers.py
+     2. type: 'h'
+     3. wait for the second player (client) to connect
 
+#### 2nd player [client]:
+     1. python checkers.py
+     2. type: 'j'
+     3. type: '127.0.0.1' (ip of server)
