@@ -20,7 +20,7 @@ featuring classical 8x8 board, piece movement, king promotion, move highlighting
 
 ## Project Structure
 ```
-**Checkers**
+ Checkers
   ├── resources
   │   ├── board2.png
   │   ├── king_black.png
