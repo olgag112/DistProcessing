@@ -18,17 +18,23 @@ featuring classical 8x8 board, piece movement, king promotion, move highlighting
 
 ---
 
-## 📦 Project Structure
+## Project Structure
 ```
-├── dir1
-│   ├── file11.ext
-│   └── file12.ext
-├── dir2
-│   ├── file21.ext
-│   ├── file22.ext
-│   └── file23.ext
-├── dir3
-├── file_in_root.ext
+├── resources
+│   ├── board2.png
+│   ├── king_black.png
+│   ├── king_white.png
+│   └── move_sound.wav
+│   
+├── board.py
+├── forwarding.py
+├── graphics.py
+├── piece.py
+├── server.py
+├── checkers.py
+├── game.py
+├── network.py
+├── square.py
 └── README.md
 ```
 
