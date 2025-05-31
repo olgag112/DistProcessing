@@ -15,6 +15,7 @@ featuring classical 8x8 board, piece movement, king promotion, move highlighting
 - Sound effects on moves
 - Custom piece and board graphics
 - Capture obligation (you need to capture an opponent's piece if possible)
+- Handling if the one player quits
 
 ---
 
