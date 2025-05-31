@@ -49,3 +49,7 @@ featuring classical 8x8 board, piece movement, king promotion, move highlighting
      1. python checkers.py
      2. type: 'j'
      3. type: '127.0.0.1' (ip of server)
+
+## Requirements:
+- Python 3.7+
+- Pygame library installed
