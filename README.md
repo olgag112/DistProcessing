@@ -61,26 +61,26 @@ featuring classical 8x8 board, piece movement, king promotion, move highlighting
 <img src="screenshots/start_a_game.png" alt="Demo" width="400"/>
 
 ##### after clicking a piece (highlighting possible moves)
-![screenshot](screenshots/possible_moves.png)
+<img src="screenshots/possible_moves.png" alt="Demo" width="400"/>
 
 ##### after clicking a piece (possible to capture a piece)
-![screenshot](screenshots/capture_piece.png)
+<img src="screenshots/capture_piece.png" alt="Demo" width="400"/>
 
 ##### multiple capture + king transformation
-![screenshot](screenshots/multiple_capture_1.png)
-![screenshot](screenshots/multiple_capture_2.png)
-![screenshot](screenshots/multiple_capture_3_king.png)
+<img src="screenshots/multiple_capture_1.png" alt="Demo" width="300"/>
+<img src="screenshots/multiple_capture_2.png" alt="Demo" width="300"/>
+<img src="screenshots/multiple_capture_3_king.png" alt="Demo" width="300"/>
 
 ##### capture obligation (piece 2 can't move, because piece 1 can capture a piece)
-![screenshot](screenshots/capture_obligation.png)
+<img src="screenshots/capture_obligation.png" alt="Demo" width="400"/>
 
 ##### king movement
-![screenshot](screenshots/king_capture.png)
+<img src="screenshots/king_capture.png" alt="Demo" width="400"/>
 
 ##### Winner message
-![screenshot](screenshots/winner_message.png)
+<img src="screenshots/winner_message.png" alt="Demo" width="400"/>
 
 ##### Opponent quit message
-![screenshot](screenshots/opponent_quit_message.png)
+<img src="screenshots/opponent_quit_message.png" alt="Demo" width="400"/>
 
 
