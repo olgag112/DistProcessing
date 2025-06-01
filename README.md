@@ -7,6 +7,17 @@ featuring classical 8x8 board, piece movement, king promotion, move highlighting
 <img src="resources/board2.png" alt="Demo" width="400"/>
 
 ---
+## Table of Contents
+1. [Game Features](##Features)
+2. [Project Structure](## Project Structure)
+3. [Concurrency Methods](##concurrent-programming-methods)
+4. [Libraries & Frameworks](##external-librariesframeworks)
+5. [Screenshots](##screenshots)
+6. [Setup & Installation](##setup--installation)
+7. [How to Play](##ow-to-play)
+8. [Group Member Contributions](##group-member-contributions)
+9. [License](##license)
+
 
 ## Features
 
