@@ -78,14 +78,21 @@ featuring classical 8x8 board, piece movement, king promotion, move highlighting
 <img src="screenshots/capture_piece.png" alt="Demo" width="400"/>
 
 ##### multiple capture + king transformation
-<p float="left">
- 1.
- <img src="screenshots/multiple_capture_1.png" alt="Demo" width="300"/>
- 2.
- <img src="screenshots/multiple_capture_2.png" alt="Demo" width="300"/>
- 3.
- <img src="screenshots/multiple_capture_3_king.png" alt="Demo" width="300"/>
+<<p style="display: flex; gap: 20px;">
+  <span style="text-align: center; display: block;">
+    1.<br>
+    <img src="screenshots/multiple_capture_1.png" alt="Demo 1" width="300"/>
+  </span>
+  <span style="text-align: center; display: block;">
+    2.<br>
+    <img src="screenshots/multiple_capture_2.png" alt="Demo 2" width="300"/>
+  </span>
+  <span style="text-align: center; display: block;">
+    3.<br>
+    <img src="screenshots/multiple_capture_3_king.png" alt="Demo 3" width="300"/>
+  </span>
 </p>
+
 
 ##### capture obligation (piece 2 can't move, because piece 1 can capture a piece)
 <img src="screenshots/capture_obligation.png" alt="Demo" width="400"/>
