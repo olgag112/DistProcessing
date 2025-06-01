@@ -58,7 +58,7 @@ featuring classical 8x8 board, piece movement, king promotion, move highlighting
 
 ## Visual Demonstration:
 ##### start of a game
-![screenshot](screenshots/start_a_game.png){ width=50% }
+<img src="screenshots/start_a_game.png" alt="Demo" width="400"/>
 
 ##### after clicking a piece (highlighting possible moves)
 ![screenshot](screenshots/possible_moves.png)
