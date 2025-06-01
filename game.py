@@ -13,10 +13,13 @@ from server import *
 WHITE    = (255, 255, 255)
 BLACK    = (0,   0,   0)
 
-# Class that handles the whole game process
+"""
+Class that handles the whole game process
+"""
 class Game:
 
 	def __init__(self, network, is_server):
+		"""initializing the game for one player"""
 		
 		self.graphics = Graphics()
 		self.board = Board()
@@ -43,12 +46,14 @@ class Game:
 		self.role = "WHITE" if self.is_server else "BLACK"
 		self.graphics.set_caption(f"Checkers - {self.role}")
 
-	# sending board to the opponent
+
 	async def make_network_move(self):
+		"""sending board to the opponent"""
 		await self.network.send(self.board)
 
-	# Receives a move from the opponent
+
 	async def receive_network_move(self):
+		"""Receives a move from the opponent"""
 		try:
 			# Receive data from the network
 			received_board = await self.network.receive()
@@ -89,13 +94,15 @@ class Game:
 			print("Connection lost")
 			await self.terminate_game()
 
-	# creates a window where the board is displayed (beginning)
+
 	def setup(self):
+		"""creates a window where the board is displayed (beginning)"""
 		self.graphics.setup_window()
 		self.update()
 
-	# handling the events (move, closing window, etc.)
+	
 	async def event_loop(self):
+		"""handling the events (move, closing window, etc.)"""
 		self.update()
 		# what square is the mouse in?
 		self.mouse_pos = self.graphics.board_coords(pygame.mouse.get_pos())
@@ -156,12 +163,14 @@ class Game:
 						self.selected_piece = self.mouse_pos
 		self.update()
 
-	# diplaying updated board
+
 	def update(self):
+		"""updating board"""
 		self.graphics.update_display(self.board, self.selected_legal_moves, self.selected_piece)
 
-	# quiting the game
+
 	async def terminate_game(self):
+		"""quiting the game"""
 		# inform opponent that you left and terminate the code
 		try:
 			if self.network:
@@ -173,11 +182,13 @@ class Game:
 			pygame.quit()
 			os._exit(0)
 
-	# handles the whole game's process
+
 	async def main(self):
+		"""handles the whole game's process"""
 		self.setup()
 
-		while True:  # Main game loop
+		# process of the game
+		while True:
 			if self.my_turn:
 				# If it's your turn
 				self.update()
@@ -187,9 +198,12 @@ class Game:
 				# Waiting for another player's move
 				await self.receive_network_move()
 
-	# end the turn. Switches the current player. 
-	# and checks if the game ended
+
 	async def end_turn(self):
+		"""
+		End the turn. Switches the current player. 
+		Checks if the game ended
+		"""
 		self.selected_piece = None
 		self.selected_legal_moves = []
 		self.hop = False
@@ -207,9 +221,11 @@ class Game:
 			return
 		
 	
-	# Checks if the opponent has any possible moves left.
-	# If not, the game is over.
 	def check_for_endgame(self):
+		"""
+		Checks if the opponent has any possible moves left.
+		If not, the game is over.
+		"""
 		opponent_color = BLACK if self.my_color == WHITE else WHITE
 		for x in range(8):
 			for y in range(8):
