@@ -54,3 +54,6 @@ featuring classical 8x8 board, piece movement, king promotion, move highlighting
 ## Requirements:
 - Python 3.7+
 - Pygame library installed
+
+## Visual Demonstration:
+
