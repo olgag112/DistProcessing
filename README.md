@@ -56,4 +56,27 @@ featuring classical 8x8 board, piece movement, king promotion, move highlighting
 - Pygame library installed
 
 ## Visual Demonstration:
+##### start of a game
+![screenshot](screenshots/start_a_game.png)
+
+##### after clicking a piece (highlighting possible moves)
+![screenshot](screenshots/possible_moves.png)
+
+##### after clicking a piece (possible to capture a piece)
+![screenshot](screenshots/capture_piece.png)
+
+##### multiple capture + king transformation
+![screenshot](screenshots/multiple_capture_1.png)
+![screenshot](screenshots/multiple_capture_2.png)
+![screenshot](screenshots/multiple_capture_3_king.png)
+
+##### king movement
+![screenshot](screenshots/king_capture.png)
+
+##### Winner message
+![screenshot](screenshots/winner_message.png)
+
+##### Opponent quit message
+![screenshot](screenshots/opponent_quit_message.png)
+
 
