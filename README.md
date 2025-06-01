@@ -80,11 +80,11 @@ featuring classical 8x8 board, piece movement, king promotion, move highlighting
 ##### multiple capture + king transformation
 <p float="left">
   
- <img src="screenshots/multiple_capture_1.png" alt="Demo" width="300"/>
+ <img src="screenshots/multiple_capture_1.png" alt="Demo" width="350"/>
   
- <img src="screenshots/multiple_capture_2.png" alt="Demo" width="300"/>
+ <img src="screenshots/multiple_capture_2.png" alt="Demo" width="350"/>
   
- <img src="screenshots/multiple_capture_3_king.png" alt="Demo" width="300"/>
+ <img src="screenshots/multiple_capture_3_king.png" alt="Demo" width="350"/>
 </p>
 
 
