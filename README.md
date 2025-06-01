@@ -8,11 +8,11 @@ featuring classical 8x8 board, piece movement, king promotion, move highlighting
 
 ---
 ## Table of Contents
-1. [Game Features](##Features)
-2. [Project Structure](## Project Structure)
-3. [Concurrency Methods](##concurrent-programming-methods)
-4. [Libraries & Frameworks](##external-librariesframeworks)
-5. [Screenshots](##screenshots)
+1. Game Features
+2. Project Structure
+3. How to run a game?
+4. Requirements
+5. Visual Demonstration
 6. [Setup & Installation](##setup--installation)
 7. [How to Play](##ow-to-play)
 8. [Group Member Contributions](##group-member-contributions)
