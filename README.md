@@ -3,7 +3,8 @@
 A Checkers game for 2 players built using **Python** and **Pygame**, 
 featuring classical 8x8 board, piece movement, king promotion, move highlighting, and sound effects.
 
-![screenshot](resources/board2.png)
+
+<img src="resources/board2.png" alt="Demo" width="400"/>
 
 ---
 
