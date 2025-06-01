@@ -15,14 +15,17 @@ SOUTHWEST = "southwest"
 SOUTHEAST = "southeast"
 
 
+"""
+Represents a checkers game board with an 8x8 matrix of 'Square' objects , 
+"""
 class Board:
 	def __init__(self):
+		"""Initializes the board by creating and populating the matrix with pieces."""
 		self.matrix = self.new_board()
 
-	# Create a new board matrix.
-	def new_board(self):
 
-		# initialize squares and place them in matrix
+	def new_board(self):
+		"""Creates a new board and allocate pieces for players """
 		matrix = [[None] * 8 for i in range(8)]
 
 		for x in range(8):
@@ -48,6 +51,7 @@ class Board:
 		return matrix
 	
 	def rel(self, dir, pixel):
+		"""Returns the relative position from a pixel in the given diagonal direction"""
 		x = pixel[0]
 		y = pixel[1]
 		if dir == NORTHWEST:
@@ -61,25 +65,25 @@ class Board:
 		else:
 			return 0
 
-	# Returns a list of squares locations that are adjacent (on a diagonal) to (x,y).
+
 	def adjacent(self, pixel):
+		"""Returns a list of squares locations that are adjacent (on a diagonal) to (x,y)."""
 		x = pixel[0]
 		y = pixel[1]
 
 		return [self.rel(NORTHWEST, (x,y)), self.rel(NORTHEAST, (x,y)),self.rel(SOUTHWEST, (x,y)),self.rel(SOUTHEAST, (x,y))]
 
-	# Takes a set of coordinates as arguments and returns self.matrix[x][y]
+
 	def location(self, pixel):
+		"""Return the square from the board based on coordinates (pixel)"""
 		x = pixel[0]
 		y = pixel[1]
 
 		return self.matrix[x][y]
 	
 
-
-	# Returns list of possible directions (without checking if its possible)
 	def blind_legal_moves(self, pixel):
-
+		"""Returns list of possible directions (without checking if its possible)"""
 		x = pixel[0]
 		y = pixel[1]
 		if self.matrix[x][y].occupant != None:
@@ -98,8 +102,9 @@ class Board:
 
 		return blind_legal_moves
 
-	# Returns a list of possible move locations from a given set of coordinates (x,y) on the board.
+
 	def legal_moves(self, pixel, to_select = None, hop = False):
+		"""Returns a list of possible move locations from a given set of coordinates (x,y) on the board."""
 		self.can_hop = False
 		if to_select and pixel not in to_select:
 			return []
@@ -131,14 +136,16 @@ class Board:
 			legal_moves = [moves for moves in legal_moves if moves not in blind_legal_moves]
 		return legal_moves
 
-	# Removes a piece from the board at position (x,y). 
+
 	def remove_piece(self, pixel):
+		"""Removes a piece from the board at position (x,y)"""
 		x = pixel[0]
 		y = pixel[1]
 		self.matrix[x][y].occupant = None
 
-	# Move a piece from (start_x, start_y) to (end_x, end_y).
+
 	def move_piece(self, pixel_start, pixel_end):
+		"""moves a piece fromm pixel_start to pixel_end"""
 		start_x = pixel_start[0]
 		start_y = pixel_start[1]
 		end_x = pixel_end[0]
@@ -159,8 +166,9 @@ class Board:
 		else:
 			return False
 
-	# Checks to see if the given square (x,y) lies on the board.
+
 	def on_board(self, pixel):
+		"""Checks to see if the given square (x,y) lies on the board"""
 
 		x = pixel[0]
 		y = pixel[1]
@@ -169,8 +177,9 @@ class Board:
 		else:
 			return True
 
-	# Takes in (x,y), the coordinates of square to be considered for kinging.
+
 	def king(self, pixel):
+		"""Takes in (x,y), the coordinates of square to be considered for kinging"""
 		x = pixel[0]
 		y = pixel[1]
 		if self.location((x,y)).occupant != None:
@@ -178,6 +187,7 @@ class Board:
 				self.location((x,y)).occupant.king = True 
 
 	def capture_posibility(self, color):
+		"""Returns all pieces of a given color that have at least one legal capture move."""
 		to_select = []
 		for i in range(8):
 			for j in range(8):
