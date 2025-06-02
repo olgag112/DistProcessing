@@ -13,10 +13,6 @@ featuring classical 8x8 board, piece movement, king promotion, move highlighting
 3. How to run a game?
 4. Requirements
 5. Visual Demonstration
-6. [Setup & Installation](##setup--installation)
-7. [How to Play](##ow-to-play)
-8. [Group Member Contributions](##group-member-contributions)
-9. [License](##license)
 
 
 ## Features
