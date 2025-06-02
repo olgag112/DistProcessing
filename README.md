@@ -96,4 +96,12 @@ featuring classical 8x8 board, piece movement, king promotion, move highlighting
 ##### Opponent quit message
 <img src="screenshots/opponent_quit_message.png" alt="Demo" width="400"/>
 
+## Contribution of team members:
 
+At the beginning, we divided the workload into three main areas and assigned to each of us:
+- **Game Visualization** – assigned to Franciszek Gajda
+- **Server-Client Communication** – assigned to Olga Granecka
+- **Game Logic** – assigned to Jan Gniedziejko
+  
+However, as the project progressed, we often collaborated and helped each other in some tasks. 
+This teamwork allowed us to exchange ideas, evaluate different solutions, and choose the best ones.
